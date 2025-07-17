@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FiDownload } from 'react-icons/fi'
 import codingAnimation from '../assets/coding.json'
 import Lottie from 'lottie-react'
-
+import curriculo from '../assets/cv-dev.pdf'
 const HeroSection: React.FC = () => {
   return (
     <section
@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
 
           <div className="flex gap-4 items-center justify-center md:justify-start mb-6">
             <a
-              href="https://linkedin.com/in/seu-usuario"
+              href="https://www.linkedin.com/in/fabius-maia-622988242/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black hover:bg-blue-500 text-white p-3 rounded-full transition shadow-md"
@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
               <FaLinkedin size={20} />
             </a>
             <a
-              href="https://github.com/seu-usuario"
+              href="https://github.com/Fabiusmaia"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black hover:bg-gray-800 text-white p-3 rounded-full transition shadow-md"
@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           <a
-            href="/curriculo.pdf"
+            href={curriculo}
             download
             className="inline-flex items-center gap-2 bg-white text-2xl text-black font-semibold px-5 py-3 rounded shadow hover:bg-gray-200 transition"
           >

@@ -18,7 +18,7 @@ export default function ContactSection() {
 
         <div className="flex justify-center gap-6">
           <a
-            href="https://linkedin.com/in/seu-perfil"
+            href="https://www.linkedin.com/in/fabius-maia-622988242/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-900"
@@ -26,7 +26,7 @@ export default function ContactSection() {
             <FaLinkedin size={20} />
           </a>
           <a
-            href="https://github.com/seu-usuario"
+            href="https://github.com/Fabiusmaia"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-900 transition"
