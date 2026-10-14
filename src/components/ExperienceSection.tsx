@@ -17,9 +17,11 @@ const experiences: Experience[] = [
     role: 'Back-end Developer',
     period: 'Oct 2025 – Sep 2026 · Remote',
     points: [
-      'Maintained a barbershop-management SaaS built with Laravel and Blade, using MySQL for persistence and Redis for caching and queues.',
-      'Fixed client-reported bugs and shipped improvements to scheduling, payments and customer management.',
-      'Supported the ongoing evolution of the platform in production.',
+      'Built and maintained a Laravel platform for technical inspections and reporting, from backend logic to Blade/Livewire interfaces.',
+      'Reduced response times on high-traffic endpoints by reworking database queries and adding Redis caching.',
+      'Moved heavy PDF report generation into queued background jobs, eliminating timeouts on large documents.',
+      'Maintained a barbershop-management SaaS (Laravel, Blade, MySQL, Redis), shipping improvements to scheduling, payments and customer management.',
+      'Fixed production data-integrity issues with custom Artisan commands and targeted migrations; wrote PHPUnit tests for permission rules and status-dependent workflows.',
     ],
   },
   {
