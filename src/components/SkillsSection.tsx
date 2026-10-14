@@ -26,18 +26,18 @@ const skills = [
 
 const SkillsSection: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
+    <div className="flex flex-col lg:flex-row items-center gap-10 mb-20">
       <div className="flex-1 flex justify-center">
-        <Lottie animationData={tools} loop={true} className="w-full max-w-md" />
+        <Lottie animationData={tools} loop={true} className="w-full max-w-[220px] sm:max-w-xs lg:max-w-md" />
       </div>
-      <div className="flex-1 text-center md:text-left">
+      <div className="flex-1 text-center lg:text-left">
         <h3 className="text-3xl font-semibold mb-6">Full Stack Development</h3>
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-6">
-          {skills.map((skill) => (
-            <SkillIcon key={skill.name} {...skill} />
+        <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-6">
+          {skills.map((skill, index) => (
+            <SkillIcon key={skill.name} index={index} {...skill} />
           ))}
         </div>
-        <ul className="text-gray-600 text-lg space-y-2">
+        <ul className="text-gray-600 text-base sm:text-lg space-y-2 text-left inline-block">
           <li>⚡ RESTful APIs with Laravel and Node.js/NestJS</li>
           <li>⚡ Admin panels and web apps with Next.js, React and TypeScript</li>
           <li>⚡ Reusable UI components with Tailwind CSS</li>

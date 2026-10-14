@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaMapPin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
+import Reveal from './Reveal'
 
 export default function ContactSection() {
   return (
@@ -7,7 +8,7 @@ export default function ContactSection() {
       id="contact"
       className="bg-gray-900 text-white py-16"
     >
-      <div className="max-w-4xl mx-auto px-6 text-center">
+      <Reveal className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Get in touch</h2>
         <p className="text-lg text-gray-300 mb-8">
           Open to fullstack and back-end opportunities, remote. Have a
@@ -16,7 +17,7 @@ export default function ContactSection() {
 
         <a
           href="mailto:ffam-20@hotmail.com"
-          className="inline-flex items-center gap-2 bg-white text-gray-900 text-lg font-semibold px-6 py-3 rounded shadow hover:bg-gray-200 transition mb-8"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-base sm:text-lg font-semibold px-6 py-3 rounded-lg shadow-lg shadow-fuchsia-900/30 transition hover:scale-105 hover:shadow-fuchsia-500/40 mb-8 break-all"
         >
           <FiMail /> ffam-20@hotmail.com
         </a>
@@ -32,7 +33,7 @@ export default function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-violet-600 hover:-translate-y-1 transition"
           >
             <FaLinkedin size={20} />
           </a>
@@ -41,12 +42,12 @@ export default function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition"
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-violet-600 hover:-translate-y-1 transition"
           >
             <FaGithub size={20} />
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

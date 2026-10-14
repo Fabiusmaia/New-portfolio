@@ -22,20 +22,20 @@ const skills = [
 
 const AutomationSection: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row-reverse items-center gap-10">
+    <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
       <div className="flex-1 flex justify-center">
-        <Lottie animationData={tools} loop={true} className="w-full max-w-md" />
+        <Lottie animationData={tools} loop={true} className="w-full max-w-[220px] sm:max-w-xs lg:max-w-md" />
       </div>
-      <div className="flex-1 text-center md:text-left">
+      <div className="flex-1 text-center lg:text-left">
         <h3 className="text-3xl font-semibold mb-6">
           Databases, Automation & Deployment
         </h3>
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-6">
-          {skills.map((skill) => (
-            <SkillIcon key={skill.name} {...skill} />
+        <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-6">
+          {skills.map((skill, index) => (
+            <SkillIcon key={skill.name} index={index} {...skill} />
           ))}
         </div>
-        <ul className="text-gray-600 text-lg space-y-2">
+        <ul className="text-gray-600 text-base sm:text-lg space-y-2 text-left inline-block">
           <li>⚡ Modeling and optimizing PostgreSQL and MySQL databases</li>
           <li>⚡ CI/CD pipelines with GitHub Actions and Docker</li>
           <li>⚡ Queues and caching with RabbitMQ and Redis, file storage on AWS S3</li>

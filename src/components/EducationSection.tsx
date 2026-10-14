@@ -4,6 +4,7 @@ import { FaComputer } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import type { IconType } from 'react-icons'
+import SectionTitle from './SectionTitle'
 
 type EducationItem = {
   title: string
@@ -67,6 +68,7 @@ function TimelineItem({ item, index }: { item: EducationItem; index: number }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : undefined}
       transition={{ duration: 0.6, delay: index * 0.15 }}
+      whileHover={{ x: 6 }}
     >
       <span className="absolute -left-4 top-2 bg-violet-400 p-2 rounded-full shadow-lg z-20">
         <Icon size={20} />
@@ -106,9 +108,7 @@ const EducationSection: React.FC = () => {
       className="w-full px-6 md:px-16 py-20 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white"
     >
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-          Education
-        </h2>
+        <SectionTitle light>Education</SectionTitle>
 
         <div className="relative pl-8 space-y-12 z-10">
           <div className="absolute left-[9px] top-[12px] bottom-0 w-1 overflow-hidden z-0">

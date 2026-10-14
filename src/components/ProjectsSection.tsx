@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import { FaGithub } from 'react-icons/fa'
+import SectionTitle from './SectionTitle'
 import { FiHeadphones, FiShield } from 'react-icons/fi'
 import type { IconType } from 'react-icons'
 import rct23d from '../assets/rct23d.jpg'
@@ -43,28 +45,40 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-6 md:px-16 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
+        <SectionTitle>Projects</SectionTitle>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project) => {
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => {
             const Icon = project.icon
             return (
-              <article
+              <motion.article
                 key={project.name}
-                className="bg-white shadow-lg rounded-xl overflow-hidden flex flex-col hover:shadow-2xl transition"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                whileHover={{ y: -8 }}
+                className="group bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-purple-900/20 transition-shadow ring-1 ring-black/5"
               >
+                <div className="relative h-44 overflow-hidden">
                 {project.image ? (
                   <img
                     src={project.image}
                     alt={`${project.name} screenshot`}
                     loading="lazy"
-                    className="w-full h-44 object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
-                  <div className="w-full h-44 flex items-center justify-center bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
-                    {Icon && <Icon size={56} />}
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
+                    {Icon && (
+                      <Icon
+                        size={56}
+                        className="transition-transform duration-500 group-hover:scale-125 group-hover:rotate-6"
+                      />
+                    )}
                   </div>
                 )}
+                </div>
 
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
@@ -85,12 +99,13 @@ export default function ProjectsSection() {
                     href={project.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-semibold text-purple-900 hover:underline"
+                    className="inline-flex items-center gap-2 font-semibold text-purple-900 hover:text-fuchsia-600 transition-colors"
                   >
                     <FaGithub /> View code
+                    <span className="transition-transform group-hover:translate-x-1">→</span>
                   </a>
                 </div>
-              </article>
+              </motion.article>
             )
           })}
         </div>

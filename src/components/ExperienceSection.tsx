@@ -1,5 +1,7 @@
 import sunset from '../assets/sunset.jpg'
 import oak from '../assets/oak.jpg'
+import Reveal from './Reveal'
+import SectionTitle from './SectionTitle'
 
 type Experience = {
   company: string
@@ -60,14 +62,13 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="py-20 px-6 md:px-16">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">Experience</h2>
+        <SectionTitle>Experience</SectionTitle>
 
         <div className="space-y-8">
-          {experiences.map((exp) => (
-            <article
-              key={exp.company}
-              className="bg-white shadow-lg rounded-xl p-6 md:p-8 hover:shadow-2xl transition"
-            >
+          {experiences.map((exp, index) => (
+            <Reveal key={exp.company} delay={index * 0.1}>
+            <article className="relative bg-white shadow-lg rounded-2xl p-6 md:p-8 ring-1 ring-black/5 overflow-hidden transition duration-300 hover:shadow-2xl hover:shadow-purple-900/15 hover:-translate-y-1">
+              <span className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-500 to-fuchsia-400" />
               <div className="flex items-center gap-4 mb-4">
                 {exp.logo ? (
                   <img
@@ -95,6 +96,7 @@ export default function ExperienceSection() {
                 ))}
               </ul>
             </article>
+            </Reveal>
           ))}
         </div>
       </div>
