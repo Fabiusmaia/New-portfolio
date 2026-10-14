@@ -1,77 +1,47 @@
 import React from 'react'
-import './styles/AutomationSection.css'
 import tools from '../assets/infrastructure.json'
 import Lottie from 'lottie-react'
-
 import {
   SiDocker,
-  SiGithub,
   SiGithubactions,
+  SiMysql,
   SiPostgresql,
+  SiRabbitmq,
+  SiRedis,
 } from 'react-icons/si'
+import SkillIcon from './SkillIcon'
+
+const skills = [
+  { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
+  { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
+  { name: 'Redis', icon: SiRedis, color: '#DC382D' },
+  { name: 'Docker', icon: SiDocker, color: '#2496ED' },
+  { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
+  { name: 'RabbitMQ', icon: SiRabbitmq, color: '#FF6600' },
+]
 
 const AutomationSection: React.FC = () => {
   return (
-    <section className="skills-section">
-      <div className="automation-content flex vw-100 vh-100 justify-between">
-        <div className="vw-1/2 mr-20">
-          <Lottie
-            animationData={tools}
-            loop={true}
-            className="automation-gif slideInLeft"
-          />
-        </div>
-        <div className="vw-1/2">
-          <div className="skill-icons w-full slide-out-right gap-4">
-            <div className="w-full text-nowrap">
-              <h2 className="text-4xl mb-4">Automation and Deployment</h2>
-            </div>
-            <div className="flex gap-4 justify-center">
-              <div
-                title="HTML5"
-                className="rounded-full shadow-md shadow-black/20 p-3 inline-flex items-center justify-center "
-              >
-                <SiPostgresql size={32} />
-              </div>
-              <div
-                title="CSS3"
-                className="rounded-full shadow-md shadow-black/20 p-3 inline-flex items-center justify-center"
-              >
-                <SiGithub size={32} />
-              </div>
-              <div
-                title="JavaScript"
-                className="rounded-full shadow-md shadow-black/20 p-3 inline-flex items-center justify-center text-blue-500"
-              >
-                <SiDocker size={32} />
-              </div>
-              <div
-                title="Github Actions"
-                className="rounded-full shadow-md shadow-black/20 p-3 inline-flex items-center justify-center text-blue-500"
-              >
-                <SiGithubactions size={32} />
-              </div>
-            </div>
-
-            <div className="flex flex-col mt-5">
-              <div>
-                <h2 className="text-gray-500 text-opacity-50 text-xl mt-2">
-                  ⚡ Hosting and maintaining websites on virtual machine
-                  instances along with integration of databases
-                </h2>
-              </div>
-
-              <div>
-                <h2 className="text-gray-500 text-opacity-50 text-xl  mt-2">
-                  ⚡ Building CI/CD pipelines for automated testing & deployment
-                  using Github Actions
-                </h2>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col md:flex-row-reverse items-center gap-10">
+      <div className="flex-1 flex justify-center">
+        <Lottie animationData={tools} loop={true} className="w-full max-w-md" />
       </div>
-    </section>
+      <div className="flex-1 text-center md:text-left">
+        <h3 className="text-3xl font-semibold mb-6">
+          Databases, Automation & Deployment
+        </h3>
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-6">
+          {skills.map((skill) => (
+            <SkillIcon key={skill.name} {...skill} />
+          ))}
+        </div>
+        <ul className="text-gray-600 text-lg space-y-2">
+          <li>⚡ Modeling and optimizing PostgreSQL and MySQL databases</li>
+          <li>⚡ CI/CD pipelines with GitHub Actions and Docker</li>
+          <li>⚡ Queues and caching with RabbitMQ and Redis, file storage on AWS S3</li>
+        </ul>
+      </div>
+    </div>
   )
 }
 

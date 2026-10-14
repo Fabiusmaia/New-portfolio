@@ -1,24 +1,3 @@
-.section {
-  padding: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-body {
-  font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
-}
-.section-lg {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.container {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 @keyframes growLine {
   from {
     height: 0%;

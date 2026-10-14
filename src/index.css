@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #7C419F;
-
+  --color-primary: #7C419F;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
