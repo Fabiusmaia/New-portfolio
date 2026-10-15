@@ -18,7 +18,7 @@ const educationTimeline: EducationItem[] = [
   {
     title: 'Bachelor’s in Information Systems',
     institution: 'UFMG – Universidade Federal de Minas Gerais',
-    period: 'Completed Apr 2025',
+    period: 'Completed Apr 2024',
     icon: FaGraduationCap,
     description:
       'Software development, systems analysis and design, databases, networks and information management.',
