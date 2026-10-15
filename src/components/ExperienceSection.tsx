@@ -41,7 +41,7 @@ const experiences: Experience[] = [
   {
     company: 'Sunset Tires',
     role: 'Fullstack Developer',
-    period: 'Jun 2022 – Sep 2022 · Remote',
+    period: 'Feb 2022 – May 2022 · Remote',
     logo: sunset,
     points: [
       'Developed a complete back-office system (products, orders, customers and inventory) for a tire company.',
