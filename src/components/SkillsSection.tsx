@@ -1,6 +1,5 @@
 import React from 'react'
-import tools from '../assets/tools.json'
-import Lottie from 'lottie-react'
+import LazyLottie from './LazyLottie'
 import {
   SiLaravel,
   SiNestjs,
@@ -12,6 +11,8 @@ import {
   SiTypescript,
 } from 'react-icons/si'
 import SkillIcon from './SkillIcon'
+
+const loadTools = () => import('../assets/tools.json')
 
 const skills = [
   { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
@@ -28,7 +29,7 @@ const SkillsSection: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center gap-10 mb-20">
       <div className="flex-1 flex justify-center">
-        <Lottie animationData={tools} loop={true} className="w-full max-w-[220px] sm:max-w-xs lg:max-w-md" />
+        <LazyLottie load={loadTools} aspectRatio="1021 / 1024" className="w-full max-w-[220px] sm:max-w-xs lg:max-w-md" />
       </div>
       <div className="flex-1 text-center lg:text-left">
         <h3 className="text-3xl font-semibold mb-6">Full Stack Development</h3>

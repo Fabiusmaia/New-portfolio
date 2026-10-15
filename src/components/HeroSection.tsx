@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FiChevronDown, FiDownload, FiMail } from 'react-icons/fi'
-import codingAnimation from '../assets/coding.json'
-import Lottie from 'lottie-react'
+import LazyLottie from './LazyLottie'
 import curriculo from '../assets/fabius-maia-cv-en.pdf?url'
+
+const loadCoding = () => import('../assets/coding.json')
 
 const roles = ['Fullstack Developer', 'Laravel Developer', 'Next.js Developer', 'Node.js Developer']
 
@@ -146,9 +147,9 @@ const HeroSection: React.FC = () => {
             y: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
           }}
         >
-          <Lottie
-            animationData={codingAnimation}
-            loop={true}
+          <LazyLottie
+            load={loadCoding}
+            aspectRatio="500 / 500"
             className="w-full max-w-[280px] sm:max-w-sm lg:max-w-xl"
           />
         </motion.div>

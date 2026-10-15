@@ -1,6 +1,5 @@
 import React from 'react'
-import tools from '../assets/infrastructure.json'
-import Lottie from 'lottie-react'
+import LazyLottie from './LazyLottie'
 import {
   SiDocker,
   SiGithubactions,
@@ -10,6 +9,8 @@ import {
   SiRedis,
 } from 'react-icons/si'
 import SkillIcon from './SkillIcon'
+
+const loadInfrastructure = () => import('../assets/infrastructure.json')
 
 const skills = [
   { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
@@ -24,7 +25,7 @@ const AutomationSection: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
       <div className="flex-1 flex justify-center">
-        <Lottie animationData={tools} loop={true} className="w-full max-w-[220px] sm:max-w-xs lg:max-w-md" />
+        <LazyLottie load={loadInfrastructure} aspectRatio="912 / 824" className="w-full max-w-[220px] sm:max-w-xs lg:max-w-md" />
       </div>
       <div className="flex-1 text-center lg:text-left">
         <h3 className="text-3xl font-semibold mb-6">
