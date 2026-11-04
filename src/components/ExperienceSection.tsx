@@ -31,7 +31,7 @@ const experiences: Experience[] = [
     logo: oak,
     points: [
       'Built a ticketing platform (event ticket sales and issuance) with a Laravel (PHP 8.1) API that generates ticket PDFs and a Next.js frontend.',
-      'Built XBRI’s admin backoffice: NestJS/TypeORM backend with JWT auth, Swagger docs, AWS S3 file storage and RabbitMQ queues, plus a Next.js frontend.',
+      'Built XBRI’s admin backoffice: NestJS/TypeORM backend with JWT auth, Swagger docs, file storage on Amazon Web Services (AWS) and RabbitMQ queues, plus a Next.js frontend.',
       'Developed and maintained the Next.js admin panel of a project-management system consuming Laravel REST APIs.',
       'Created reusable UI components with TypeScript and Tailwind CSS, standardizing frontend work across projects.',
       'Implemented CI/CD pipelines with GitHub Actions and Docker, significantly reducing deployment time.',

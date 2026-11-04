@@ -8,6 +8,7 @@ import {
   SiRabbitmq,
   SiRedis,
 } from 'react-icons/si'
+import { FaAws } from 'react-icons/fa'
 import SkillIcon from './SkillIcon'
 
 const loadInfrastructure = () => import('../assets/infrastructure.json')
@@ -19,6 +20,7 @@ const skills = [
   { name: 'Docker', icon: SiDocker, color: '#2496ED' },
   { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
   { name: 'RabbitMQ', icon: SiRabbitmq, color: '#FF6600' },
+  { name: 'AWS', icon: FaAws, color: '#FF9900' },
 ]
 
 const AutomationSection: React.FC = () => {
@@ -39,7 +41,8 @@ const AutomationSection: React.FC = () => {
         <ul className="text-gray-600 text-base sm:text-lg space-y-2 text-left inline-block">
           <li>⚡ Modeling and optimizing PostgreSQL and MySQL databases</li>
           <li>⚡ CI/CD pipelines with GitHub Actions and Docker</li>
-          <li>⚡ Queues and caching with RabbitMQ and Redis, file storage on AWS S3</li>
+          <li>⚡ Queues and caching with RabbitMQ and Redis</li>
+          <li>⚡ Cloud infrastructure on Amazon Web Services (AWS): EC2, S3, RDS, Lambda, CloudFront and IAM</li>
         </ul>
       </div>
     </div>
